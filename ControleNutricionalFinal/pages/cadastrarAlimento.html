@@ -1,0 +1,215 @@
+﻿<form class="form-horizontal box-form">
+    <div class="form">
+        <div class="form-group">
+            <label class="col-md-3 control-label required">Nome*</label>
+            <div class="col-md-9">
+                <input class="form-control" ng-model="alimento.Nome" id="Nome" type="text" placeholder="Nome do alimento"  maxlength="50" />
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="col-md-3 control-label required">Grupo</label>
+            <div class="col-md-9">
+                <select ng-model="grupo" ng-options="grupo.Nome for grupo in grupoArray" ></select>
+            <br />
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label class="col-md-6 control-label required">
+                        Porção*
+                     </label>
+                    <div class="col-md-6">
+                        <input placeholder="Porção" ng-model="alimento.Porcao" id="Porcao" type="number" maxlength="5" min="0" />
+                        <p class="validationMessage" ></p>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-6 control-label required">Valor calórico*</label>
+                    <div class="col-md-6">
+                        <input placeholder="Valor calórico" ng-model="alimento.Valor_Calorico" id="Valor_calorico" type="number" maxlength="5" min="0" />
+                        <p class="validationMessage"></p>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-6 control-label">CHO</label>
+                    <div class="col-md-6">
+                        <input id="cho" ng-model="alimento.Cho" placeholder="CHO" type="number" maxlength="5" min="0" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-6 control-label">Proteínas</label>
+                    <div class="col-md-6">
+                        <input id="proteinas" ng-model="alimento.Proteinas" placeholder="Proteínas" type="number" maxlength="5" min="0"/>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-6 control-label">Gorduras totais</label>
+                    <div class="col-md-6">
+                        <input id="gordurastotais" ng-model="alimento.Gorduras_totais" placeholder="Gorduras totais" type="number" maxlength="5" min="0" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-6 control-label">Gorduras saturadas</label>
+                    <div class="col-md-6">
+                        <input id="gordurassaturadas" ng-model="alimento.Gorduras_saturadas" placeholder="Gorduras saturadas" type="number" maxlength="5" min="0" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-6 control-label">Colesterol</label>
+                    <div class="col-md-6">
+                        <input id="Colesterol" ng-model="alimento.Colesterol" placeholder="Colesterol" type="number" maxlength="5" min="0" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-6 control-label">Fósforo (P)</label>
+                    <div class="col-md-6">
+                        <input id="fosforo" ng-model="alimento.Fosforo" placeholder="Fósforo" type="number" maxlength="5" min="0" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-6 control-label">Poliinsaturados</label>
+                    <div class="col-md-6">
+                        <input id="PoliSat" ng-model="alimento.Polisaturados" placeholder="Poliinsaturados" type="number" maxlength="5" min="0" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-6 control-label">Monoinsaturados</label>
+                    <div class="col-md-6">
+                        <input id="MonoSat" ng-model="alimento.MonoSaturados" placeholder="Monoinsaturados" type="number" maxlength="5" min="0" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-6 control-label">Vitamina B1</label>
+                    <div class="col-md-6">
+                        <input id="VitaminaB1" ng-model="alimento.Vitamina_b1" placeholder="Vitamina B1" type="number" maxlength="5" min="0" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-6 control-label">Vitamina B2</label>
+                    <div class="col-md-6">
+                        <input id="VitaminaB2" ng-model="alimento.Vitamina_b2" placeholder="Vitamina B2" type="number" maxlength="5" min="0" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-6 control-label">Vitamina B3</label>
+                    <div class="col-md-6">
+                        <input id="VitaminaB3" ng-model="alimento.Vitamina_b3" placeholder="Vitamina B3" type="number" maxlength="5" min="0" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-6 control-label">Vitamina B6</label>
+                    <div class="col-md-6">
+                        <input id="VitaminaB6" ng-model="alimento.Vitamina_b6" placeholder="Vitamina B6" type="number" maxlength="5" min="0" />
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label class="col-md-6 control-label">Gordura trans</label>
+                    <div class="col-md-6">
+                        <input id="gorduratrans" ng-model="alimento.Gordura_trans" placeholder="Gordura trans" type="number" maxlength="5" min="0" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-6 control-label">Fibra alimentar</label>
+                    <div class="col-md-6">
+                        <input id="fibraalimentar" ng-model="alimento.Fibra_alimentar" placeholder="Fibra alimentar" type="number" maxlength="5" min="0" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-6 control-label">Açucar</label>
+                    <div class="col-md-6">
+                        <input id="acucar" ng-model="alimento.Acucar" placeholder="Açucar" type="number" maxlength="5" min="0" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-6 control-label">Sódio</label>
+                    <div class="col-md-6">
+                        <input id="sodio" ng-model="alimento.Sodio" placeholder="Sódio" type="number" maxlength="5" min="0" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-6 control-label">Selênio</label>
+                    <div class="col-md-6">
+                        <input id="selenio" ng-model="alimento.Selenio" placeholder="Selênio" type="number" maxlength="5" min="0" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-6 control-label">Cálcio</label>
+                    <div class="col-md-6">
+                        <input id="calcio" ng-model="alimento.Calcio" placeholder="Cálcio" type="number" maxlength="5" min="0" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-6 control-label">Ferro</label>
+                    <div class="col-md-6">
+                        <input id="ferro" ng-model="alimento.Ferro" placeholder="Ferro" type="number" maxlength="5" min="0" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-6 control-label">Potássio</label>
+                    <div class="col-md-6">
+                        <input id="potassio" ng-model="alimento.Potassio" placeholder="Potássio" type="number" maxlength="5" min="0" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-6 control-label">Zinco</label>
+                    <div class="col-md-6">
+                        <input id="zinco" ng-model="alimento.Zinco" placeholder="Zinco" type="number" maxlength="5" min="0" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-6 control-label">Magnésio</label>
+                    <div class="col-md-6">
+                        <input id="mg" ng-model="alimento.Magnesio" placeholder="Magnésio" type="number" maxlength="5" min="0" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-6 control-label">Vitamina A</label>
+                    <div class="col-md-6">
+                        <input id="VitaminaA" ng-model="alimento.Vitamina_a" placeholder="Vitamina A" type="number" maxlength="5" min="0" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-6 control-label">Vitamina C</label>
+                    <div class="col-md-6">
+                        <input id="VitaminaC" ng-model="alimento.Vitamina_c" placeholder="Vitamina C" type="number" maxlength="5" min="0" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-6 control-label">Vitamina D</label>
+                    <div class="col-md-6">
+                        <input id="VitaminaD" ng-model="alimento.Vitamina_d" placeholder="Vitamina D" type="number" maxlength="5" min="0" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-6 control-label">Vitamina E</label>
+                    <div class="col-md-6">
+                        <input id="VitaminaE" ng-model="alimento.Vitamina_e" placeholder="Vitamina E" type="number" maxlength="5" min="0" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-6 control-label">Vitamina B9</label>
+                    <div class="col-md-6">
+                        <input id="folato" ng-model="alimento.Vitamina_b9" placeholder="Vitamina B9" type="number" maxlength="5" min="0" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-6 control-label">Vitamina B12</label>
+                    <div class="col-md-6">
+                        <input id="VitaminaB12" ng-model="alimento.Vitamina_b12" placeholder="Vitamina B12" type="number" maxlength="5" min="0" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+   
+    <div class="form-footer">
+        <button type="button" class="btn btn-success" ng-click="save();" >Salvar</button>
+        <a href="#/" class="btn btn-default" >Cancelar</a>
+    </div>
+  
+</form>

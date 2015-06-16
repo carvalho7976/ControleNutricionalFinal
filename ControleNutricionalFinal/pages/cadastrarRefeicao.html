@@ -1,0 +1,28 @@
+﻿<form class="form-horizontal box-form">
+    <div class="form">
+        <div class="form-group">
+            <label class="col-md-3 control-label required">Descrição</label>
+            <div class="col-md-9">
+                <input class="form-control" ng-model="refeicao.Descricao" id="Descricao" type="text" placeholder="Descrição" maxlength="50" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-md-3 control-label required">Alimento</label>
+            
+            <div class="col-md-9" id="divAlimentos">
+                <select class="ac-select stateList" ac-model="stateSelected" ac-options="s.Nome for s in getAllStates()" ac-settings="{ loadOnCreate: false, loadOnOpen: true, minWidth: '300px' }" ac-change="stateSelected(value)"></select>
+                <label class="col-md-6 control-label">Quantidade</label>
+                <input id="cho" ng-model="quantidade" placeholder="Gramas ou Ml" type="number" max="10000" min="1" />
+                <button ng-click="addItem()">Adicionar</button>
+             </div>
+                        
+        </div>
+
+    </div>
+
+    <div class="form-footer">
+        <button type="button" class="btn btn-success" ng-click="saveRefeicao();">Salvar</button>
+        <a href="#/" class="btn btn-default">Cancelar</a>
+    </div>
+
+</form>
