@@ -50,7 +50,7 @@ namespace ControleNutricionalFinal
 
         [OperationContract]
         [WebInvoke(Method = "POST", UriTemplate = "createRefeicao", ResponseFormat = WebMessageFormat.Json, RequestFormat = WebMessageFormat.Json)]
-        bool createRefeicao(Refeicao refeicao);
+        Refeicao createRefeicao(Refeicao refeicao);//mudei de bool para Refeicao --
 
         [OperationContract]
         [WebInvoke(Method = "PUT", UriTemplate = "editRefeicao", ResponseFormat = WebMessageFormat.Json, RequestFormat = WebMessageFormat.Json)]
