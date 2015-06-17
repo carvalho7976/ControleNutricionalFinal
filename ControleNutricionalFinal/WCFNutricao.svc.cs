@@ -185,14 +185,14 @@ namespace ControleNutricionalFinal
             };
         }
 
+        //ListaDeAlimentoPorRefeicao
         public List<AlimentoRefeicao> listaAlimentosPorRefeicao()
         {
             using (NutricaoContext mde = new NutricaoContext())
             {
-
                 var queryAlimentoRefeicao = mde.AlimentoRefeicao.Select(column => new 
                 { Alimento = column.Alimento, Refeicao = column.Refeicao, Quantidade = column.Quantidade, ValorCaloricoTotal = (column.Quantidade * column.Alimento.Valor_calorico)/100 }).ToList();
-                return queryAlimentoRefeicao.Where(r => r.Refeicao.Id == 10).Select(column => new AlimentoRefeicao { Alimento = column.Alimento, Quantidade = column.Quantidade, ValorCaloricoTotal = (double)column.ValorCaloricoTotal}).ToList();
+                return queryAlimentoRefeicao.Where(r => r.Refeicao.Id == 100).Select(column => new AlimentoRefeicao { Alimento = column.Alimento, Quantidade = column.Quantidade, ValorCaloricoTotal = (double)column.ValorCaloricoTotal}).ToList();
 
             };
         }
