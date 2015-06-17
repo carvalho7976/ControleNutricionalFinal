@@ -55,7 +55,7 @@ namespace ControleNutricionalFinal
         List<AlimentoRefeicao> findAllAlimentoRefeicao();
 
         [OperationContract]
-        List<AlimentoRefeicao> relatorioConsumoDia();
+        List<AlimentoRefeicao> listaAlimentosPorRefeicao();
 
         [OperationContract]
         AlimentoRefeicao findAlimentoRefeicao(string id);
@@ -69,8 +69,8 @@ namespace ControleNutricionalFinal
         [OperationContract]
         bool deleteAlimentoRefeicao(AlimentoRefeicao alimentoRefeicao);
 
-        [OperationContract]
-        bool registration(Usuario user);
+        //[OperationContract]
+        //bool registration(Usuario user);
 
         [OperationContract]
         bool login(string nome, string pwd);

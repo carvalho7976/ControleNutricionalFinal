@@ -11,6 +11,8 @@ namespace ControleNutricionalFinal.Models
         public virtual Alimento Alimento { get; set; }
         public virtual Refeicao Refeicao { get; set; }
         public double Quantidade { get; set; }
+        public double ValorCaloricoTotal { get; set; }
+
 
     }
 }
