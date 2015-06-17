@@ -13,7 +13,7 @@ namespace ControleNutricionalFinal
     // NOTE: You can use the "Rename" command on the "Refactor" menu to change the class name "WCFNutricao" in code, svc and config file together.
     // NOTE: In order to launch WCF Test Client for testing this service, please select WCFNutricao.svc or WCFNutricao.svc.cs at the Solution Explorer and start debugging.
     public class WCFNutricao : IWCFNutricaoREST, IWCFNutricaoSOAP
-    {        
+    {
         public List<Alimento> findAllAlimento()
         {
             using (NutricaoContext mde = new NutricaoContext())
@@ -36,7 +36,7 @@ namespace ControleNutricionalFinal
             using (NutricaoContext mde = new NutricaoContext())
             {
                 try
-                {                    
+                {
                     mde.Alimentos.Add(alimento);
                     mde.SaveChanges();
 
@@ -121,11 +121,11 @@ namespace ControleNutricionalFinal
             {
                 try
                 {
-                    
+
                     Debug.Write("Entrou no create");
-                    
+
                     refeicao.dataDeCriacao = DateTime.Today;
-                    
+
                     mde.Refeicao.Add(refeicao);
                     mde.SaveChanges();
                     return refeicao;
@@ -185,25 +185,15 @@ namespace ControleNutricionalFinal
             };
         }
 
-        public List<AlimentoRefeicao> relatorioConsumoDia()
+        public List<AlimentoRefeicao> listaAlimentosPorRefeicao()
         {
             using (NutricaoContext mde = new NutricaoContext())
             {
-                //int nid = Convert.ToInt32(id);
-                //Funcionando modo 1
-                //var queryAlimentoRefeicao = mde.AlimentoRefeicao.Select(column => new { Quantidade = column.Quantidade, Id = column.Id}).ToList();
-                //return queryAlimentoRefeicao.Select(column => new AlimentoRefeicao { Quantidade = column.Quantidade, Id = column.Id }).ToList();
 
-                //Funcionando modo 2
-                //var anyms_AlimentoRefeicao = mde.AlimentoRefeicao.Select(column => new { Quantidade = column.Quantidade}).ToList();
-                //List<AlimentoRefeicao> result = new List<AlimentoRefeicao>();
-                //foreach (var currentAlimentoRefeicao in anyms_AlimentoRefeicao)
-                //{
-                //    result.Add(new AlimentoRefeicao { Quantidade = currentAlimentoRefeicao.Quantidade });
-                //}
-                //return result;
-                var queryAlimentoRefeicao = mde.AlimentoRefeicao.Select(column => new {Quantidade = column.Quantidade * column.Alimento.Valor_calorico }).ToList();
-                return queryAlimentoRefeicao.Select(column => new AlimentoRefeicao {Quantidade = column.Quantidade.HasValue ? column.Quantidade.Value : 0 }).ToList();
+                var queryAlimentoRefeicao = mde.AlimentoRefeicao.Select(column => new 
+                { Alimento = column.Alimento, Refeicao = column.Refeicao, Quantidade = column.Quantidade, ValorCaloricoTotal = (column.Quantidade * column.Alimento.Valor_calorico)/100 }).ToList();
+                return queryAlimentoRefeicao.Where(r => r.Refeicao.Id == 10).Select(column => new AlimentoRefeicao { Alimento = column.Alimento, Quantidade = column.Quantidade, ValorCaloricoTotal = (double)column.ValorCaloricoTotal}).ToList();
+
             };
         }
 
@@ -274,41 +264,51 @@ namespace ControleNutricionalFinal
         }
 
 
-        public bool registration(Usuario user)
-        {
-            using (NutricaoContext mde = new NutricaoContext())
-            {
-                try
-                {
-                    mde.Usuario.Add(user);
-                    mde.SaveChanges();
-                    return true;
-                }
-                catch (Exception ex)
-                {
-                    Debug.Write(ex.ToString());
-                    return false;
-                }
-            };
-        }
+        //public bool registration(Usuario user)
+        //{
+        //    using (NutricaoContext mde = new NutricaoContext())
+        //    {
+        //        try
+        //        {
+        //            mde.Usuario.Add(user);
+        //            mde.SaveChanges();
+        //            return true;
+        //        }
+        //        catch (Exception ex)
+        //        {
+        //            Debug.Write(ex.ToString());
+        //            return false;
+        //        }
+        //    };
+        //}
 
         public bool login(string nome, string pwd)
         {
-            using (NutricaoContext mde = new NutricaoContext())
-            {
-                var messages = from user in mde.Usuario
-                               where user.Nome == nome && user.Senha == pwd
-                               select user;
+            //using (NutricaoContext mde = new NutricaoContext())
+            //{
+            //    var messages = from user in mde.Usuario
+            //                   where user.Nome == nome && user.Senha == pwd
+            //                   select user;
 
-                if (messages.Count() > 0)
-                {
-                    return true;
-                }
-                else
-                {
-                    return false;
-                }
-            };
+            //    if (messages.Count() > 0)
+            //    {
+            //        return true;
+            //    }
+            //    else
+            //    {
+            //        return false;
+            //    }
+            //};
+
+            if (nome == null || pwd == null)
+            {
+                return false;
+            }
+            if (nome == "admin" && pwd == "admin")
+            {
+                return true;
+            }
+            return false;
         }
     }
 }
