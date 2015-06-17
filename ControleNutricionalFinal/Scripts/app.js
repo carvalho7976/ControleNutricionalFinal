@@ -1,6 +1,4 @@
-﻿var urlGrupo = 'http://localhost:50916/SeviceGrupo.svc/'
-var urlAlimento = 'http://localhost:50916/ServiceAlimento.svc/';
-var urlRefeicao = 'http://localhost:50916/ServiceRefeicao.svc/';
+﻿var url = 'http://localhost:64257/WCFNutricao.svc/';
 
 var ControleNutricional = angular.module("ControleNutricional", ['ngRoute', 'ngResource', 'acute.select']).
     config(function ($routeProvider) {
@@ -28,7 +26,7 @@ var IndexControl = function ($scope, $location, $routeParams, $http) {
     $scope.message = "Fulano";
     $scope.listarTodos = function () {
 
-        $http.get(urlAlimento + "findall").success(function (data) {
+        $http.get(url + "findAllAlimento").success(function (data) {
             console.log(data);
         });      
 
@@ -40,7 +38,7 @@ var CadastroAlimentoControl = function ($scope, $location, $routeParams, $http) 
     $scope.grupoArray = [];
     var lista;
     $scope.search = function () {
-        $http.get(urlGrupo + "findall").success(function (data) {
+        $http.get(url + "findAllGrupo").success(function (data) {
             $scope.grupoArray = data;
             $scope.grupo = $scope.grupoArray[0];
         });
@@ -56,7 +54,7 @@ var CadastroAlimentoControl = function ($scope, $location, $routeParams, $http) 
         $scope.alimento.Grupo = $scope.grupo.Id;
 
         console.log($scope.alimento);
-        $http.post(urlAlimento + "create", $scope.alimento).success(function () {
+        $http.post(url + "createAlimento", $scope.alimento).success(function () {
             $location.path('/');
         });
         //ControleNutricional.save($scope.alimento, function () {
@@ -67,11 +65,12 @@ var CadastroAlimentoControl = function ($scope, $location, $routeParams, $http) 
 
 var CadastroRefeicaoControl = function ($scope, $location, $routeParams, $http) {
     var alimentos = [];
+    var quantidades = [];
    // $scope.allStates = [];
     var estados = [];
     $scope.allState = [];
     $scope.search = function () {
-        $http.get(urlAlimento + "findall").success(function (data) {
+        $http.get(url + "findAllAlimento").success(function (data) {
             $scope.allStates = data;
             $scope.stateSelected = $scope.allStates[0].Nome;
         });
@@ -91,22 +90,30 @@ var CadastroRefeicaoControl = function ($scope, $location, $routeParams, $http) 
             var myEl = angular.element(document.querySelector('#divAlimentos'));
             myEl.append("<br/> " + alimento);
             alimentos.push($scope.stateSelected);
+            quantidades.push($scope.quantidade);
         }
     };
    $scope.saveRefeicao = function () {
        var alimento;
+       var refeicao = [];
+      
+       $http.post(url + "createRefeicao", $scope.refeicao).success(function (data) {
+           refeicao = data;
+          
+           for (i = 0; i < alimentos.length; i++) {
+               var alimentoRefeicao = {
+                   Alimento: alimentos[i],
+                   Quantidade: quantidades[i],
+                   Refeicao: refeicao
+               };
+               console.log(alimentoRefeicao);
+              // $scope.alimentoRefeicao.alimento = alimentos[i];
+               //$scope.alimentoRefeicao.quantidade = quantidades[i];
+               $http.post(url + "createAlimentoRefeicao",alimentoRefeicao);
+           }
+           $location.path('/');
+       });
        
-      // var refeicao = [{ Descricao: $scope.Descricao }];
-      // var refeicao = [{Descricao: $scope.Descricao, Id: null, dataDeCriacao: null}];
-
-       //recomeçar daki
-       // obeto está vindo com campo descricao nulo
-       $scope.refeicao.dataDeCriacao = Date();
-       
-           $http.post(urlRefeicao + "create", $scope.refeicao).success(function (data) {
-               console.log($scope.refeicao);
-               console.log(data);
-           });
        
        //console.log(refeicao);
        var quantidade;

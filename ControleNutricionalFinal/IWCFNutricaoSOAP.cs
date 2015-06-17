@@ -41,7 +41,7 @@ namespace ControleNutricionalFinal
         Refeicao findRefeicao(string id);
 
         [OperationContract]
-        bool createRefeicao(Refeicao refeicao);
+        Refeicao createRefeicao(Refeicao refeicao);//mudei de bool para refeicao
 
         [OperationContract]
         bool editRefeicao(Refeicao refeicao);

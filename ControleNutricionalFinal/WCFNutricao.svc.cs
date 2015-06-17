@@ -114,21 +114,26 @@ namespace ControleNutricionalFinal
             };
         }
 
-        public bool createRefeicao(Refeicao refeicao)
+        //mudando de bool para refeicao
+        public Refeicao createRefeicao(Refeicao refeicao)
         {
             using (NutricaoContext mde = new NutricaoContext())
             {
                 try
                 {
+                    
                     Debug.Write("Entrou no create");
+                    
+                    refeicao.dataDeCriacao = DateTime.Today;
+                    
                     mde.Refeicao.Add(refeicao);
                     mde.SaveChanges();
-                    return true;
+                    return refeicao;
                 }
                 catch (Exception ex)
                 {
                     Debug.Write(ex.ToString());
-                    return false;
+                    return null;
                 }
             };
         }
