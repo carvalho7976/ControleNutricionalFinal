@@ -20,6 +20,7 @@ namespace ControleNutricionalFinal.Models
         public DbSet<Grupo> Grupos { get; set; }
         public DbSet<Refeicao> Refeicao { get; set; }
         public DbSet<AlimentoRefeicao> AlimentoRefeicao { get; set; }
+        public DbSet<Usuario> Usuario { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
@@ -38,6 +39,10 @@ namespace ControleNutricionalFinal.Models
             var mapAlimentoRefeicao = modelBuilder.Entity<AlimentoRefeicao>();
             mapAlimentoRefeicao.Property(arf => arf.Id).HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
             mapAlimentoRefeicao.HasKey(arf => arf.Id);
+
+            var mapUsuario = modelBuilder.Entity<Usuario>();
+            mapUsuario.Property(user => user.Id).HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
+            mapUsuario.HasKey(user => user.Id);
 
 
             modelBuilder.Entity<Alimento>()

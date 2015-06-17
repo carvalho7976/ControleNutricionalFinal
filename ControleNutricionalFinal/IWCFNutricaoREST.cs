@@ -67,7 +67,7 @@ namespace ControleNutricionalFinal
         List<AlimentoRefeicao> findAllAlimentoRefeicao();
 
         [OperationContract]
-        [WebInvoke(Method = "GET", UriTemplate = "relatorioConsumoDiario", ResponseFormat = WebMessageFormat.Json)]
+        [WebInvoke(Method = "GET", UriTemplate = "relatorioConsumoDia", ResponseFormat = WebMessageFormat.Json)]
         List<AlimentoRefeicao> relatorioConsumoDia();
 
         [OperationContract]
@@ -85,5 +85,6 @@ namespace ControleNutricionalFinal
         [OperationContract]
         [WebInvoke(Method = "DELETE", UriTemplate = "deleteAlimentoRefeicao", ResponseFormat = WebMessageFormat.Json, RequestFormat = WebMessageFormat.Json)]
         bool deleteAlimentoRefeicao(AlimentoRefeicao alimentoRefeicao);
+
     }
 }

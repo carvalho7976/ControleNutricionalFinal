@@ -69,6 +69,12 @@ namespace ControleNutricionalFinal
         [OperationContract]
         bool deleteAlimentoRefeicao(AlimentoRefeicao alimentoRefeicao);
 
+        [OperationContract]
+        bool registration(Usuario user);
+
+        [OperationContract]
+        bool login(string nome, string pwd);
+
     }
 }
 

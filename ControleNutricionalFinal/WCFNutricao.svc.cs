@@ -197,8 +197,8 @@ namespace ControleNutricionalFinal
                 //    result.Add(new AlimentoRefeicao { Quantidade = currentAlimentoRefeicao.Quantidade });
                 //}
                 //return result;
-                var queryAlimentoRefeicao = mde.AlimentoRefeicao.Select(column => new { Quantidade = column.Quantidade * column.Alimento.Valor_calorico }).ToList();
-                return queryAlimentoRefeicao.Select(column => new AlimentoRefeicao { Quantidade = column.Quantidade.HasValue ? column.Quantidade.Value : 0 }).ToList();
+                var queryAlimentoRefeicao = mde.AlimentoRefeicao.Select(column => new {Quantidade = column.Quantidade * column.Alimento.Valor_calorico }).ToList();
+                return queryAlimentoRefeicao.Select(column => new AlimentoRefeicao {Quantidade = column.Quantidade.HasValue ? column.Quantidade.Value : 0 }).ToList();
             };
         }
 
@@ -259,6 +259,44 @@ namespace ControleNutricionalFinal
                 {
                     mde.AlimentoRefeicao.Remove(result);
                     mde.SaveChanges();
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            };
+        }
+
+
+        public bool registration(Usuario user)
+        {
+            using (NutricaoContext mde = new NutricaoContext())
+            {
+                try
+                {
+                    mde.Usuario.Add(user);
+                    mde.SaveChanges();
+                    return true;
+                }
+                catch (Exception ex)
+                {
+                    Debug.Write(ex.ToString());
+                    return false;
+                }
+            };
+        }
+
+        public bool login(string nome, string pwd)
+        {
+            using (NutricaoContext mde = new NutricaoContext())
+            {
+                var messages = from user in mde.Usuario
+                               where user.Nome == nome && user.Senha == pwd
+                               select user;
+
+                if (messages.Count() > 0)
+                {
                     return true;
                 }
                 else
