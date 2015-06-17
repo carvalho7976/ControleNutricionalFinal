@@ -6,6 +6,8 @@ var ControleNutricional = angular.module("ControleNutricional", ['ngRoute', 'ngR
             when('/', { controller: IndexControl, templateUrl: '/pages/home.html' }).
             when('/cadastrar', { controller: CadastroAlimentoControl, templateUrl: '/pages/cadastrarAlimento.html' }).
             when('/cadastrarRefeicao', { controller: CadastroRefeicaoControl, templateUrl: '/pages/cadastrarRefeicao.html' }).
+            when('/relatorio', { controller: RelatorioControl, templateUrl: '/pages/relatorio.html' }).
+
 
             otherwise({ redirectTo: '/' });
     });
@@ -129,4 +131,8 @@ var CadastroRefeicaoControl = function ($scope, $location, $routeParams, $http) 
     $scope.search();
        
    
+};
+var RelatorioControl = function ($scope, $location, $routeParams, $http) {
+    var refeicoes = [];
+
 };

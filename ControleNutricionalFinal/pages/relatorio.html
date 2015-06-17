@@ -1,0 +1,23 @@
+﻿<div class="jumbotron text-center">
+    <h1>Relatorios</h1>
+
+    <table>
+        <tr>
+            <td>Refeição</td>
+            <td>Alimentos</td>
+        </tr>
+        <tr ng-repeat="ref in refeicoes">
+            <td>{{ r.Descricao}}</td>
+            <td>
+                <table>
+                    <tr ng-repeat="a in alimentos">
+                        <td>{{ a.Nome }}</td>
+                    </tr>
+                </table>
+            </td>
+
+        </tr>
+    </table>
+
+    
+</div>

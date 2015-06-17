@@ -83,6 +83,7 @@
     <Content Include="pages\cadastrarRefeicao.html" />
     <Content Include="pages\home.html" />
     <Content Include="pages\index.html" />
+    <Content Include="pages\relatorio.html" />
     <Content Include="Scripts\acute.select.js" />
     <Content Include="Scripts\angular-animate.js" />
     <Content Include="Scripts\angular-animate.min.js" />
@@ -866,6 +867,7 @@
     <Content Include="Scripts\jquery-1.9.1.js" />
     <Content Include="Scripts\jquery-1.9.1.min.js" />
     <Content Include="Scripts\npm.js" />
+    <Content Include="tabela.aspx" />
     <Content Include="WCFNutricao.svc" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
@@ -893,9 +895,15 @@
     <Compile Include="Models\Grupo.cs" />
     <Compile Include="Models\NutricaoContext.cs" />
     <Compile Include="Models\Refeicao.cs" />
-    <Compile Include="Models\Relario.cs" />
     <Compile Include="Models\Usuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="tabela.aspx.cs">
+      <DependentUpon>tabela.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="tabela.aspx.designer.cs">
+      <DependentUpon>tabela.aspx</DependentUpon>
+    </Compile>
     <Compile Include="WCFNutricao.svc.cs">
       <DependentUpon>WCFNutricao.svc</DependentUpon>
     </Compile>
