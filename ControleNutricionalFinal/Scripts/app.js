@@ -1,6 +1,4 @@
-﻿var urlGrupo = 'http://localhost:50916/SeviceGrupo.svc/'
-var urlAlimento = 'http://localhost:50916/ServiceAlimento.svc/';
-var urlRefeicao = 'http://localhost:50916/ServiceRefeicao.svc/';
+﻿var url = 'http://localhost:64257/WCFNutricao.svc/';
 
 var ControleNutricional = angular.module("ControleNutricional", ['ngRoute', 'ngResource', 'acute.select']).
     config(function ($routeProvider) {
@@ -28,7 +26,7 @@ var IndexControl = function ($scope, $location, $routeParams, $http) {
     $scope.message = "Fulano";
     $scope.listarTodos = function () {
 
-        $http.get(urlAlimento + "findall").success(function (data) {
+        $http.get(url + "findAllAlimento").success(function (data) {
             console.log(data);
         });      
 
