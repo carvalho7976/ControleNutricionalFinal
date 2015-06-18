@@ -59,17 +59,26 @@ namespace ControleNutricionalFinal
         [OperationContract]
         [WebInvoke(Method = "DELETE", UriTemplate = "deleteRefeicao", ResponseFormat = WebMessageFormat.Json, RequestFormat = WebMessageFormat.Json)]
         bool deleteRefeicao(Refeicao refeicao);
-      
+
+        //Relatorios
+        [OperationContract]
+        [WebInvoke(Method = "GET", UriTemplate = "listaAlimentosPorRefeicao/{dia}/{mes}/{ano}", ResponseFormat = WebMessageFormat.Json)]
+        List<AlimentoRefeicao> listaAlimentosPorRefeicao(string dia, string mes, string ano);
+
+        [OperationContract]
+        [WebInvoke(Method = "GET", UriTemplate = "relatorioValorNutricionalTotalDiario", ResponseFormat = WebMessageFormat.Json)]
+        List<AlimentoRefeicao> relatorioValorNutricionalTotalDiario();
+
+        [OperationContract]
+        [WebInvoke(Method = "GET", UriTemplate = "relatorioTotalNutrientesMensal", ResponseFormat = WebMessageFormat.Json)]
+        List<AlimentoRefeicao> relatorioTotalNutrientesMensal();
 
         //Crud para AlimentoRefeicao
         [OperationContract]
         [WebInvoke(Method = "GET", UriTemplate = "findAllAlimentoRefeicao", ResponseFormat = WebMessageFormat.Json)]
         List<AlimentoRefeicao> findAllAlimentoRefeicao();
 
-        [OperationContract]
-        [WebInvoke(Method = "GET", UriTemplate = "listaAlimentosPorRefeicao/{dia}/{mes}/{ano}", ResponseFormat = WebMessageFormat.Json)]
-        List<AlimentoRefeicao> listaAlimentosPorRefeicao(string dia, string mes,string ano);
-
+        
         [OperationContract]
         [WebInvoke(Method = "GET", UriTemplate = "findAlimentoRefeicao/{id}", ResponseFormat = WebMessageFormat.Json)]
         AlimentoRefeicao findAlimentoRefeicao(string id);

@@ -48,12 +48,17 @@ namespace ControleNutricionalFinal
 
         [OperationContract]
         bool deleteRefeicao(Refeicao refeicao);
-
-
-        //Crud para AlimentoRefeicao
+        
         [OperationContract]
         List<AlimentoRefeicao> findAllAlimentoRefeicao();
 
+        [OperationContract]
+        List<AlimentoRefeicao> relatorioValorNutricionalTotalDiario();
+
+        [OperationContract]
+        List<AlimentoRefeicao> relatorioTotalNutrientesMensal();
+
+        //Crud para AlimentoRefeicao        
         [OperationContract]
         List<AlimentoRefeicao> listaAlimentosPorRefeicao(string dia, string mes, string ano);
 
