@@ -35,6 +35,7 @@ var IndexControl = function ($scope, $location, $routeParams, $http) {
     };
 
 };
+
 var CadastroAlimentoControl = function ($scope, $location, $routeParams, $http) {
    
     $scope.grupoArray = [];
@@ -46,12 +47,7 @@ var CadastroAlimentoControl = function ($scope, $location, $routeParams, $http) 
             grupo = data;
             $scope.grupo = $scope.grupoArray[0];
         });
-        //Grupo.query({},
-        //    function (data) {
-        //        $scope.grupoArray = data;
-        //        $scope.grupo = $scope.grupoArray[0];
-        //    });
-    };
+      };
     $scope.search();
     
     $scope.save = function () {
@@ -68,16 +64,13 @@ var CadastroAlimentoControl = function ($scope, $location, $routeParams, $http) 
         $http.post(url + "createAlimento", $scope.alimento).success(function () {
             $location.path('/');
         });
-        //ControleNutricional.save($scope.alimento, function () {
-        //   $location.path('/');
-        //});
+       
     };
 };
 
 var CadastroRefeicaoControl = function ($scope, $location, $routeParams, $http) {
     var alimentos = [];
     var quantidades = [];
-   // $scope.allStates = [];
     var estados = [];
     $scope.allState = [];
     $scope.search = function () {
@@ -110,15 +103,12 @@ var CadastroRefeicaoControl = function ($scope, $location, $routeParams, $http) 
                    Refeicao: refeicao
                };
                console.log(alimentoRefeicao);
-              // $scope.alimentoRefeicao.alimento = alimentos[i];
-               //$scope.alimentoRefeicao.quantidade = quantidades[i];
-               $http.post(url + "createAlimentoRefeicao",alimentoRefeicao);
+              $http.post(url + "createAlimentoRefeicao",alimentoRefeicao);
            }
            $location.path('/');
        });
        
-       
-       //console.log(refeicao);
+     
        var quantidade;
     };
 
@@ -133,13 +123,17 @@ var CadastroRefeicaoControl = function ($scope, $location, $routeParams, $http) 
        
    
 };
+
 var RelatorioControl = function ($scope, $location, $routeParams, $http) {
- var dataCriacao = {"dia": 18, "mes": 06, "ano": 2015};
+    var dataCriacao = { "dia": 18, "mes": 06, "ano": 2015 };
+    $scope.date = '20140313T00:00:00';
     var refeicoes = [];
 
   
-            $http.get(url + "listaAlimentosPorRefeicao" +"/" + dataCriacao.dia +"/" + dataCriacao.mes +"/" + dataCriacao.ano).success(function (data) {
-               
+       $http.get(url + "listaAlimentosPorRefeicao" +"/" + dataCriacao.dia +"/" + dataCriacao.mes +"/" + dataCriacao.ano).success(function (data) {
+                // como a lista de alimento refeicão vem em um json um pouco complicado 
+                // separo apenas as refeições, tirando as repetidas(vide formato do json) 
+                // e na view faço mais dois laços para exibir os alimentos por refeição, 
                 var temp_ref = [];
                 var temp_al = [];
                 var copy = data;
@@ -160,12 +154,19 @@ var RelatorioControl = function ($scope, $location, $routeParams, $http) {
                 $scope.refeicoes = temp_ref;
                 $scope.alimentos = data;
                 console.log(data);  
-                //$scope.refeicoes = temp_ref;
-                //$scope.alimentos = temp_al;
-                //$scope.alimentos = data.Alimento;
+               
                                 
             //
         });
-    
+
+       $http.get(url + "relatorioValorNutricionalTotalDiario").success(function (data) {
+           var alimento = data[0];
+           for (i = 1 ; i < data.length ; i++){
+               alimento.Calcio_valorTotal += data[i].Calcio_valorTotal;
+               alimento.Cho_valorTotal += data[i].Cho_valorTotal;
+           }
+           $scope.alimento_t = alimento;
+       });
+            
 
 };

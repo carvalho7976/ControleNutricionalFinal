@@ -218,7 +218,7 @@ namespace ControleNutricionalFinal
         {
             using (NutricaoContext mde = new NutricaoContext())
             {
-                DateTime data = new DateTime(2015, 06, 17);
+                
                 var queryAlimentoRefeicao = mde.AlimentoRefeicao.Select(column =>
                     new
                     {
@@ -257,41 +257,41 @@ namespace ControleNutricionalFinal
                         Vitamina_b12_valorTotal = (column.Quantidade * column.Alimento.Vitamina_b12) / column.Alimento.Porcao
                     }).ToList();
 
-                return queryAlimentoRefeicao.Where(r => r.Refeicao.dataDeCriacao == data).Select(column =>
+                return queryAlimentoRefeicao.Where(r => r.Refeicao.dataDeCriacao == DateTime.Today).Select(column =>
                     new AlimentoRefeicao
                     {
                         Alimento = column.Alimento,
                         Quantidade = column.Quantidade,
                         ValorCaloricoTotal = column.ValorCaloricoTotal.HasValue ? column.ValorCaloricoTotal.Value : 0,
-                        Cho_valorTotal = Math.Round(column.Cho_valorTotal.HasValue ? column.Cho_valorTotal.Value : 0, 3),
-                        Proteinas_valorTotal = column.Proteinas_valorTotal.HasValue ? column.Proteinas_valorTotal.Value : 0,
-                        Gorduras_totais_valorTotal = column.Gorduras_totais_valorTotal.HasValue ? column.Gorduras_totais_valorTotal.Value : 0,
-                        Gorduras_saturadas_valorTotal = column.Gorduras_saturadas_valorTotal.HasValue ? column.Gorduras_saturadas_valorTotal.Value : 0,
-                        Colesterol_valorTotal = column.Colesterol_valorTotal.HasValue ? column.Colesterol_valorTotal.Value : 0,
-                        Fosforo_valorTotal = column.Fosforo_valorTotal.HasValue ? column.Fosforo_valorTotal.Value : 0,
-                        Poliinsaturados_valorTotal = column.Poliinsaturados_valorTotal.HasValue ? column.Poliinsaturados_valorTotal.Value : 0,
-                        Monoinsaturados_valorTotal = column.Monoinsaturados_valorTotal.HasValue ? column.Monoinsaturados_valorTotal.Value : 0,
-                        Vitamina_b1_valorTotal = column.Vitamina_b1_valorTotal.HasValue ? column.Vitamina_b1_valorTotal.Value : 0,
-                        Vitamina_b2_valorTotal = column.Vitamina_b2_valorTotal.HasValue ? column.Vitamina_b2_valorTotal.Value : 0,
-                        Vitamina_b3_valorTotal = column.Vitamina_b3_valorTotal.HasValue ? column.Vitamina_b3_valorTotal.Value : 0,
+                        Cho_valorTotal =  Math.Round( column.Cho_valorTotal.HasValue ? column.Cho_valorTotal.Value : 0, 3 ),
+                        Proteinas_valorTotal = column.Proteinas_valorTotal.HasValue?column.Proteinas_valorTotal.Value :0,
+                        Gorduras_totais_valorTotal = column.Gorduras_totais_valorTotal.HasValue ? column.Gorduras_totais_valorTotal.Value :0,
+                        Gorduras_saturadas_valorTotal = column.Gorduras_saturadas_valorTotal.HasValue ? column.Gorduras_saturadas_valorTotal.Value :0,
+                        Colesterol_valorTotal = column.Colesterol_valorTotal.HasValue ? column.Colesterol_valorTotal.Value :0,
+                        Fosforo_valorTotal = column.Fosforo_valorTotal.HasValue ? column.Fosforo_valorTotal.Value:0,
+                        Poliinsaturados_valorTotal = column.Poliinsaturados_valorTotal.HasValue ? column.Poliinsaturados_valorTotal.Value :0,
+                        Monoinsaturados_valorTotal = column.Monoinsaturados_valorTotal.HasValue ? column.Monoinsaturados_valorTotal.Value :0,
+                        Vitamina_b1_valorTotal = column.Vitamina_b1_valorTotal.HasValue ? column.Vitamina_b1_valorTotal.Value :0,
+                        Vitamina_b2_valorTotal = column.Vitamina_b2_valorTotal.HasValue ? column.Vitamina_b2_valorTotal.Value :0,
+                        Vitamina_b3_valorTotal = column.Vitamina_b3_valorTotal.HasValue ? column.Vitamina_b3_valorTotal.Value :0,
                         Vitamina_b6_valorTotal = column.Vitamina_b6_valorTotal.HasValue ? column.Vitamina_b6_valorTotal.Value : 0,
                         Gordura_trans_valorTotal = column.Gordura_trans_valorTotal.HasValue ? column.Gordura_trans_valorTotal.Value : 0,
                         Fibra_alimentar_valorTotal = column.Fibra_alimentar_valorTotal.HasValue ? column.Fibra_alimentar_valorTotal.Value : 0,
                         Acucar_valorTotal = column.Acucar_valorTotal.HasValue ? column.Acucar_valorTotal.Value : 0,
-                        Sodio_valorTotal = column.Sodio_valorTotal.HasValue ? column.Sodio_valorTotal.Value : 0,
+                        Sodio_valorTotal = column.Sodio_valorTotal.HasValue ? column.Sodio_valorTotal.Value :0,
                         Selenio_valorTotal = column.Selenio_valorTotal.HasValue ? column.Selenio_valorTotal.Value : 0,
-                        Calcio_valorTotal = column.Calcio_valorTotal.HasValue ? column.Calcio_valorTotal.Value : 0,
-                        Ferro_valorTotal = column.Ferro_valorTotal.HasValue ? column.Ferro_valorTotal.Value : 0,
+                        Calcio_valorTotal = column.Calcio_valorTotal.HasValue ? column.Calcio_valorTotal.Value :0,
+                        Ferro_valorTotal = column.Ferro_valorTotal.HasValue ? column.Ferro_valorTotal.Value :0,
                         Potassio_valorTotal = column.Potassio_valorTotal.HasValue ? column.Potassio_valorTotal.Value : 0,
                         Zinco_valorTotal = column.Zinco_valorTotal.HasValue ? column.Zinco_valorTotal.Value : 0,
-                        Magnesio_valorTotal = column.Magnesio_valorTotal.HasValue ? column.Magnesio_valorTotal.Value : 0,
-                        Vitamina_a_valorTotal = column.Vitamina_a_valorTotal.HasValue ? column.Vitamina_a_valorTotal.Value : 0,
-                        Vitamina_b_valorTotal = column.Vitamina_b_valorTotal.HasValue ? column.Vitamina_b_valorTotal.Value : 0,
-                        Vitamina_c_valorTotal = column.Vitamina_c_valorTotal.HasValue ? column.Vitamina_c_valorTotal.Value : 0,
+                        Magnesio_valorTotal =  column.Magnesio_valorTotal.HasValue ? column.Magnesio_valorTotal.Value :0,
+                        Vitamina_a_valorTotal = column.Vitamina_a_valorTotal.HasValue? column.Vitamina_a_valorTotal.Value :0,
+                        Vitamina_b_valorTotal = column.Vitamina_b_valorTotal.HasValue ? column.Vitamina_b_valorTotal.Value :0,
+                        Vitamina_c_valorTotal = column.Vitamina_c_valorTotal.HasValue? column.Vitamina_c_valorTotal.Value :0,
                         Vitamina_d_valorTotal = column.Vitamina_d_valorTotal.HasValue ? column.Vitamina_d_valorTotal.Value : 0,
-                        Vitamina_e_valorTotal = column.Vitamina_e_valorTotal.HasValue ? column.Vitamina_e_valorTotal.Value : 0,
-                        Vitamina_b9_valorTotal = column.Vitamina_b9_valorTotal.HasValue ? column.Vitamina_b9_valorTotal.Value : 0,
-                        Vitamina_b12_valorTotal = column.Vitamina_b12_valorTotal.HasValue ? column.Poliinsaturados_valorTotal.Value : 0
+                        Vitamina_e_valorTotal = column.Vitamina_e_valorTotal.HasValue? column.Vitamina_e_valorTotal.Value :0,
+                        Vitamina_b9_valorTotal = column.Vitamina_b9_valorTotal.HasValue ? column.Vitamina_b9_valorTotal.Value :0,
+                        Vitamina_b12_valorTotal = column.Vitamina_b12_valorTotal.HasValue ? column.Poliinsaturados_valorTotal.Value :0                        
                     }).ToList();
 
             };
@@ -303,10 +303,9 @@ namespace ControleNutricionalFinal
             {
                 var dataAtual = DateTime.Today;
                 var dataComecoDoMes = new DateTime (dataAtual.Year, dataAtual.Month, 1);
-
-                var queryAlimentoRefeicao = mde.AlimentoRefeicao.Select(column =>
-                     new
-                     {
+                
+                    var queryAlimentoRefeicao = mde.AlimentoRefeicao.Select(column =>
+                     new {
                          Alimento = column.Alimento,
                          Refeicao = column.Refeicao,
                          Quantidade = column.Quantidade,
@@ -314,13 +313,14 @@ namespace ControleNutricionalFinal
 
                      }).ToList().Take(1);
 
-                return queryAlimentoRefeicao.Where(r => r.Refeicao.dataDeCriacao>= dataComecoDoMes && r.Refeicao.dataDeCriacao <= dataAtual).Select(column =>
-                    new AlimentoRefeicao
-                    {
-                        Alimento = column.Alimento,
-                        Quantidade = column.Quantidade,
-                        ValorCaloricoTotal = Math.Round((column.ValorCaloricoTotal.HasValue ? column.ValorCaloricoTotal.Value : 0) ,3)
-                    }).ToList();
+                    return queryAlimentoRefeicao.Where(r => r.Refeicao.dataDeCriacao >= dataComecoDoMes && r.Refeicao.dataDeCriacao <= dataAtual).Select(column =>
+                        new AlimentoRefeicao {
+                            Alimento = column.Alimento,
+                            Quantidade = column.Quantidade,
+                            ValorCaloricoTotal = Math.Round(column.ValorCaloricoTotal.HasValue ? column.ValorCaloricoTotal.Value : 0, 3)
+                        }).ToList();
+              
+                
             };
         }
 
