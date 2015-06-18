@@ -186,14 +186,20 @@ namespace ControleNutricionalFinal
         }
 
         //ListaDeAlimentoPorRefeicao
-        public List<AlimentoRefeicao> listaAlimentosPorRefeicao()
+        public  List<AlimentoRefeicao> listaAlimentosPorRefeicao(string dia, string mes, string ano)
         {
             using (NutricaoContext mde = new NutricaoContext())
             {
-                var queryAlimentoRefeicao = mde.AlimentoRefeicao.Select(column => new 
-                { Alimento = column.Alimento, Refeicao = column.Refeicao, Quantidade = column.Quantidade, ValorCaloricoTotal = (column.Quantidade * column.Alimento.Valor_calorico)/100 }).ToList();
-                return queryAlimentoRefeicao.Where(r => r.Refeicao.Id == 2).Select(column => new AlimentoRefeicao { Alimento = column.Alimento, Quantidade = column.Quantidade, ValorCaloricoTotal = (double)column.ValorCaloricoTotal}).ToList();
                 
+                int nDia = Convert.ToInt32(dia);
+                int nMes = Convert.ToInt32(mes);
+                int nAno = Convert.ToInt32(ano);
+                DateTime converteDate = new DateTime(nAno, nMes, nDia);
+                //converteDate = Convert.ToDateTime(data);
+                //converteDate = '17/06/2015';
+                var queryAlimentoRefeicao = mde.AlimentoRefeicao.Select(column => new { Refeicao = column.Refeicao, Alimento = column.Alimento}).ToList();
+                return queryAlimentoRefeicao.Where(r => r.Refeicao.dataDeCriacao ==  converteDate).Select(column => new AlimentoRefeicao { Refeicao = column.Refeicao, Alimento = column.Alimento}).ToList();
+
             };
         }
 
@@ -212,6 +218,8 @@ namespace ControleNutricionalFinal
             {
                 try
                 {
+                    mde.Refeicao.Attach(alimentoRefeicao.Refeicao);
+                    mde.Alimentos.Attach(alimentoRefeicao.Alimento);
                     mde.AlimentoRefeicao.Add(alimentoRefeicao);
                     mde.SaveChanges();
                     return true;
