@@ -899,6 +899,7 @@
     <Content Include="Scripts\materialize.js" />
     <Content Include="Scripts\materialize.min.js" />
     <Content Include="Scripts\npm.js" />
+    <Content Include="Scripts\polyfiller.js" />
     <Content Include="tabela.aspx" />
     <Content Include="WCFNutricao.svc" />
     <Content Include="Web.config">
