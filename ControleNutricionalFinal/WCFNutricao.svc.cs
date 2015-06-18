@@ -297,6 +297,33 @@ namespace ControleNutricionalFinal
             };
         }
 
+        public List<AlimentoRefeicao> relatorioTotalNutrientesMensal()
+        {
+            using (NutricaoContext mde = new NutricaoContext())
+            {
+                var dataAtual = DateTime.Today;
+                var dataComecoDoMes = new DateTime (dataAtual.Year, dataAtual.Month, 1);
+
+                var queryAlimentoRefeicao = mde.AlimentoRefeicao.Select(column =>
+                     new
+                     {
+                         Alimento = column.Alimento,
+                         Refeicao = column.Refeicao,
+                         Quantidade = column.Quantidade,
+                         ValorCaloricoTotal = mde.AlimentoRefeicao.Sum(a => a.Alimento.Valor_calorico) / dataAtual.Day
+
+                     }).ToList().Take(1);
+
+                return queryAlimentoRefeicao.Where(r => r.Refeicao.dataDeCriacao>= dataComecoDoMes && r.Refeicao.dataDeCriacao <= dataAtual).Select(column =>
+                    new AlimentoRefeicao
+                    {
+                        Alimento = column.Alimento,
+                        Quantidade = column.Quantidade,
+                        ValorCaloricoTotal = Math.Round((double)column.ValorCaloricoTotal,3)
+                    }).ToList();
+            };
+        }
+
         public AlimentoRefeicao findAlimentoRefeicao(string id)
         {
             using (NutricaoContext mde = new NutricaoContext())
