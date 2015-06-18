@@ -83,8 +83,8 @@ var CadastroRefeicaoControl = function ($scope, $location, $routeParams, $http) 
    $scope.addItem = function () {
         var alimento = $scope.stateSelected.Nome;
         if (alimento != null && alimento != '') {
-            var myEl = angular.element(document.querySelector('#divAlimentos'));
-            myEl.append("<br/> " + alimento);
+            var myEl = angular.element(document.querySelector('#divAlimentos'));            
+            myEl.append("<br/> " + alimento);            
             alimentos.push($scope.stateSelected);
             quantidades.push($scope.quantidade);
         }

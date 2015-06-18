@@ -4,10 +4,7 @@
             <div class="col s6">
                 <input ng-model="refeicao.Descricao" id="Descricao" type="text" placeholder="Descrição" maxlength="50" />
                 <label class="required" for="Descricao">Descrição</label>
-
             </div>
-
-
 
             <select id="select" class=" ac-select stateList" ac-model="stateSelected" ac-options="s.Nome for s in getAllStates()" ac-settings="{ loadOnCreate: false, loadOnOpen: true, minWidth: '300px' }" ac-change="stateSelected(value)" material-select></select>
             <label class="col s6 control-label" for="select">Alimento</label>
@@ -21,11 +18,6 @@
                     <button class="waves-effect waves-light btn" ng-click="addItem()">Adicionar</button>
                 </div>
             </div>
-
-
-
- 
-
         <div class="center">
             <button type="button" class="btn " ng-click="saveRefeicao();">Salvar</button>
             <a href="#/" class="btn btn-default">Cancelar</a>

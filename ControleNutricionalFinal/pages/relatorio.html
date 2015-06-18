@@ -1,292 +1,288 @@
-﻿<div class="jumbotron text-center">
+﻿<div class="text-center">
+    <div class="center">
+        <h1 class="blue-grey-text"><i class="mdi-editor-insert-chart"></i>Relatorios</h1>
+    </div>
+    <form class="form-horizontal box-form">        
+        <div class="card-panel red lighten-5">
+            <h3 class="center red-text text-lighten-3">Relatorio Valores Nutricionais consumidos no dia</h3>
+            <table class="bordered">
+                <tr>
+                    <th>Nutriente</th>
+                    <th>Valor Total Diário</th>
+                </tr>
+                <tr>
+                    <td>Valor Calorico</td>
+                    <td>{{alimento_t.ValorCaloricoTotal}}</td>
+                </tr>
+                <tr>
+                    <td>CHO</td>
+                    <td>{{alimento_t.Cho_valorTotal}}</td>
+                </tr>
+                <tr>
+                    <td>Proteinas</td>
+                    <td>{{alimento_t.Proteinas_valorTotal}}</td>
+                </tr>
+                <tr>
+                    <td>Gprduras Totais</td>
+                    <td>{{alimento_t.Gorduras_totais_valorTotal}}</td>
+                </tr>
+                <tr>
+                    <td>Gorduras Saturadas</td>
+                    <td>{{alimento_t.Gorduras_saturadas_valorTotal}}</td>
+                </tr>
+                <tr>
+                    <td>Colesterol</td>
+                    <td>{{alimento_t.Colesterol_valorTotal}}</td>
+                </tr>
+                <tr>
+                    <td>Fósforo</td>
+                    <td>{{alimento_t.Fosforo_valorTotal}}</td>
+                </tr>
+                <tr>
+                    <td>Poliinsaturados</td>
+                    <td>{{alimento_t.Poliinsaturados_valorTotal}}</td>
+                </tr>
+                <tr>
+                    <td>Monoinsaturados</td>
+                    <td>{{alimento_t.Monoinsaturados_valorTotal}}</td>
+                </tr>
+                <tr>
+                    <td>Vitamina B1</td>
+                    <td>{{alimento_t.Vitamina_b1_valorTotal}}</td>
+                </tr>
+                <tr>
+                    <td>Vitamina B2</td>
+                    <td>{{alimento_t.Vitamina_b2_valorTotal}}</td>
+                </tr>
+                <tr>
+                    <td>Vitamina B3</td>
+                    <td>{{alimento_t.Vitamina_b3_valorTotal}}</td>
+                </tr>
+                <tr>
+                    <td>Vitamina B6</td>
+                    <td>{{alimento_t.Vitamina_b6_valorTotal}}</td>
+                </tr>
+                <tr>
+                    <td>Vitamina B9</td>
+                    <td>{{alimento_t.Vitamina_b9_valorTotal}}</td>
+                </tr>
+                <tr>
+                    <td>Vitamina B12</td>
+                    <td>{{alimento_t.Vitamina_b12_valorTotal}}</td>
+                </tr>
+                <tr>
+                    <td>Gorduras Trans</td>
+                    <td>{{alimento_t.Gordura_trans_valorTotal}}</td>
+                </tr>
+                <tr>
+                    <td>Fibra Alimentar</td>
+                    <td>{{alimento_t.Fibra_alimentar_valorTotal}}</td>
+                </tr>
+                <tr>
+                    <td>Acucar</td>
+                    <td>{{alimento_t.Acucar_valorTotal}}</td>
+                </tr>
+                <tr>
+                    <td>Sodio</td>
+                    <td>{{alimento_t.Sodio_valorTotal}}</td>
+                </tr>
+                <tr>
+                    <td>Selenio</td>
+                    <td>{{alimento_t.Selenio_valorTotal}}</td>
+                </tr>
+                <tr>
+                    <td>Calcio</td>
+                    <td>{{alimento_t.Calcio_valorTotal}}</td>
+                </tr>
+                <tr>
+                    <td>Ferro</td>
+                    <td>{{alimento_t.Ferro_valorTotal}}</td>
+                </tr>
+                <tr>
+                    <td>Potassio</td>
+                    <td>{{alimento_t.Proteinas_valorTotal}}</td>
+                </tr>
+                <tr>
+                    <td>Zinco</td>
+                    <td>{{alimento_t.Zinco_valorTotal}}</td>
+                </tr>
+                <tr>
+                    <td>Magnésio</td>
+                    <td>{{alimento_t.Magnesio_valorTotal}}</td>
+                </tr>
+                <tr>
+                    <td>Vitamina A</td>
+                    <td>{{alimento_t.Vitamina_a_valorTotal}}</td>
+                </tr>
+                <tr>
+                    <td>Vitamina B</td>
+                    <td>{{alimento_t.Vitamina_b_valorTotal}}</td>
+                </tr>
+                <tr>
+                    <td>Vitamina C</td>
+                    <td>{{alimento_t.Vitamina_c_valorTotal}}</td>
+                </tr>
+                <tr>
+                    <td>Vitamina D</td>
+                    <td>{{alimento_t.Vitamina_d_valorTotal}}</td>
+                </tr>
+                <tr>
+                    <td>Vitamina E</td>
+                    <td>{{alimento_t.Vitamina_e_valorTotal}}</td>
+                </tr>
+            </table>
+        </div>
+        <div class="card-panel blue lighten-5">
+            <h3 class="center"> Relatório Mensal - valores consumidos até o presente momento</h3>
+            <table class="bordered">
+                <tr>
+                    <th>Nutriente </th>
+                    <th>Média Mensal</th>
+                </tr>
+                <tr>
+                    <td>Valor Calorico</td>
+                    <td>{{alimento_t.ValorCaloricoTotal}}</td>
+                </tr>
+                <tr>
+                    <td>CHO</td>
+                    <td>{{alimento_t.Cho_valorTotal}}</td>
+                </tr>
+                <tr>
+                    <td>Proteinas</td>
+                    <td>{{alimento_t.Proteinas_valorTotal}}</td>
+                </tr>
+                <tr>
+                    <td>Gprduras Totais</td>
+                    <td>{{alimento_t.Gorduras_totais_valorTotal}}</td>
+                </tr>
+                <tr>
+                    <td>Gorduras Saturadas</td>
+                    <td>{{alimento_t.Gorduras_saturadas_valorTotal}}</td>
+                </tr>
+                <tr>
+                    <td>Colesterol</td>
+                    <td>{{alimento_t.Colesterol_valorTotal}}</td>
+                </tr>
+                <tr>
+                    <td>Fósforo</td>
+                    <td>{{alimento_t.Fosforo_valorTotal}}</td>
+                </tr>
+                <tr>
+                    <td>Poliinsaturados</td>
+                    <td>{{alimento_t.Poliinsaturados_valorTotal}}</td>
+                </tr>
+                <tr>
+                    <td>Monoinsaturados</td>
+                    <td>{{alimento_t.Monoinsaturados_valorTotal}}</td>
+                </tr>
+                <tr>
+                    <td>Vitamina B1</td>
+                    <td>{{alimento_t.Vitamina_b1_valorTotal}}</td>
+                </tr>
+                <tr>
+                    <td>Vitamina B2</td>
+                    <td>{{alimento_t.Vitamina_b2_valorTotal}}</td>
+                </tr>
+                <tr>
+                    <td>Vitamina B3</td>
+                    <td>{{alimento_t.Vitamina_b3_valorTotal}}</td>
+                </tr>
+                <tr>
+                    <td>Vitamina B6</td>
+                    <td>{{alimento_t.Vitamina_b6_valorTotal}}</td>
+                </tr>
+                <tr>
+                    <td>Vitamina B9</td>
+                    <td>{{alimento_t.Vitamina_b9_valorTotal}}</td>
+                </tr>
+                <tr>
+                    <td>Vitamina B12</td>
+                    <td>{{alimento_t.Vitamina_b12_valorTotal}}</td>
+                </tr>
+                <tr>
+                    <td>Gorduras Trans</td>
+                    <td>{{alimento_t.Gordura_trans_valorTotal}}</td>
+                </tr>
+                <tr>
+                    <td>Fibra Alimentar</td>
+                    <td>{{alimento_t.Fibra_alimentar_valorTotal}}</td>
+                </tr>
+                <tr>
+                    <td>Acucar</td>
+                    <td>{{alimento_t.Acucar_valorTotal}}</td>
+                </tr>
+                <tr>
+                    <td>Sodio</td>
+                    <td>{{alimento_t.Sodio_valorTotal}}</td>
+                </tr>
+                <tr>
+                    <td>Selenio</td>
+                    <td>{{alimento_t.Selenio_valorTotal}}</td>
+                </tr>
+                <tr>
+                    <td>Calcio</td>
+                    <td>{{alimento_t.Calcio_valorTotal}}</td>
+                </tr>
+                <tr>
+                    <td>Ferro</td>
+                    <td>{{alimento_t.Ferro_valorTotal}}</td>
+                </tr>
+                <tr>
+                    <td>Potassio</td>
+                    <td>{{alimento_t.Proteinas_valorTotal}}</td>
+                </tr>
+                <tr>
+                    <td>Zinco</td>
+                    <td>{{alimento_t.Zinco_valorTotal}}</td>
+                </tr>
+                <tr>
+                    <td>Magnésio</td>
+                    <td>{{alimento_t.Magnesio_valorTotal}}</td>
+                </tr>
+                <tr>
+                    <td>Vitamina A</td>
+                    <td>{{alimento_t.Vitamina_a_valorTotal}}</td>
+                </tr>
+                <tr>
+                    <td>Vitamina B</td>
+                    <td>{{alimento_t.Vitamina_b_valorTotal}}</td>
+                </tr>
+                <tr>
+                    <td>Vitamina C</td>
+                    <td>{{alimento_t.Vitamina_c_valorTotal}}</td>
+                </tr>
+                <tr>
+                    <td>Vitamina D</td>
+                    <td>{{alimento_t.Vitamina_d_valorTotal}}</td>
+                </tr>
+                <tr>
+                    <td>Vitamina E</td>
+                    <td>{{alimento_t.Vitamina_e_valorTotal}}</td>
+                </tr>
+            </table>
+        </div>
+        <div class="card-panel grey lighten-4">
+            <h3 class="center">Relatorio alimento refeição pelo dia --- falta pegar a data usuário </h3>
+            <table class="hoverable">
+                <tr>
+                    <td>Refeições</td>
+                    <td>Alimentos</td>
+                </tr>
+                <tr ng-repeat="ref in refeicoes ">
+                    <td>
+                        {{ ref.Descricao}}
+                    </td>
+                    <td>
+                        <table>
+                            <tr ng-repeat="x in alimentos ">
+                                <td ng-if="ref.Id == x.Refeicao.Id">{{x.Alimento.Nome}}
+                                <td>
+                            </tr>
+                        </table>
+                    </td>
 
-
-    <h1>Relatorios</h1>
-    <form class="form-horizontal box-form">
-
-        <h3>Relatorio alimento refeição pelo dia --- falta pegar a data usuário </h3>
-        <table class="table">
-            <tr>
-                <td>Refeição</td>
-                <td>Alimentos</td>
-            </tr>
-            <tr ng-repeat="ref in refeicoes ">
-                <td>
-                    {{ ref.Descricao}}
-                </td>
-                <td>
-                    <table>
-                        <tr ng-repeat="x in alimentos ">
-                            <td ng-if="ref.Id == x.Refeicao.Id">{{x.Alimento.Nome}}
-                            <td>
-                        </tr>
-                    </table>
-                </td>
-
-            </tr>
-        </table>
-        <h3>Relatorio Valores Nutricionais consumidos no dia</h3>
-        
-        <table class="table">
-            <tr>
-                <th>Nome </th>
-                <th>Valor</th>
-            </tr>
-            <tr>
-                <td>Valor Calorico</td>
-                <td>{{alimento_t.ValorCaloricoTotal}}</td>
-            </tr>
-            <tr>
-                <td>CHO</td>
-                <td>{{alimento_t.Cho_valorTotal}}</td>
-            </tr>
-            <tr>
-                <td>Proteinas</td>
-                <td>{{alimento_t.Proteinas_valorTotal}}</td>
-            </tr>
-            <tr>
-                <td>Gprduras Totais</td>
-                <td>{{alimento_t.Gorduras_totais_valorTotal}}</td>
-            </tr>
-            <tr>
-                <td>Gorduras Saturadas</td>
-                <td>{{alimento_t.Gorduras_saturadas_valorTotal}}</td>
-            </tr>
-            <tr>
-                <td>Colesterol</td>
-                <td>{{alimento_t.Colesterol_valorTotal}}</td>
-            </tr>
-            <tr>
-                <td>Fósforo</td>
-                <td>{{alimento_t.Fosforo_valorTotal}}</td>
-            </tr>
-            <tr>
-                <td>Poliinsaturados</td>
-                <td>{{alimento_t.Poliinsaturados_valorTotal}}</td>
-            </tr>
-            <tr>
-                <td>Monoinsaturados</td>
-                <td>{{alimento_t.Monoinsaturados_valorTotal}}</td>
-            </tr>
-            <tr>
-                <td>Vitamina B1</td>
-                <td>{{alimento_t.Vitamina_b1_valorTotal}}</td>
-            </tr>
-            <tr>
-                <td>Vitamina B2</td>
-                <td>{{alimento_t.Vitamina_b2_valorTotal}}</td>
-            </tr>
-            <tr>
-                <td>Vitamina B3</td>
-                <td>{{alimento_t.Vitamina_b3_valorTotal}}</td>
-            </tr>
-            <tr>
-                <td>Vitamina B6</td>
-                <td>{{alimento_t.Vitamina_b6_valorTotal}}</td>
-            </tr>
-            <tr>
-                <td>Vitamina B9</td>
-                <td>{{alimento_t.Vitamina_b9_valorTotal}}</td>
-            </tr>
-            <tr>
-                <td>Vitamina B12</td>
-                <td>{{alimento_t.Vitamina_b12_valorTotal}}</td>
-            </tr>
-            <tr>
-                <td>Gorduras Trans</td>
-                <td>{{alimento_t.Gordura_trans_valorTotal}}</td>
-            </tr>
-            <tr>
-                <td>Fibra Alimentar</td>
-                <td>{{alimento_t.Fibra_alimentar_valorTotal}}</td>
-            </tr>
-            <tr>
-                <td>Acucar</td>
-                <td>{{alimento_t.Acucar_valorTotal}}</td>
-            </tr>
-            <tr>
-                <td>Sodio</td>
-                <td>{{alimento_t.Sodio_valorTotal}}</td>
-            </tr>
-            <tr>
-                <td>Selenio</td>
-                <td>{{alimento_t.Selenio_valorTotal}}</td>
-            </tr>
-            <tr>
-                <td>Calcio</td>
-                <td>{{alimento_t.Calcio_valorTotal}}</td>
-            </tr>
-            <tr>
-                <td>Ferro</td>
-                <td>{{alimento_t.Ferro_valorTotal}}</td>
-            </tr>
-            <tr>
-                <td>Potassio</td>
-                <td>{{alimento_t.Proteinas_valorTotal}}</td>
-            </tr>
-            <tr>
-                <td>Zinco</td>
-                <td>{{alimento_t.Zinco_valorTotal}}</td>
-            </tr>
-            <tr>
-                <td>Magnésio</td>
-                <td>{{alimento_t.Magnesio_valorTotal}}</td>
-            </tr>
-            <tr>
-                <td>Vitamina A</td>
-                <td>{{alimento_t.Vitamina_a_valorTotal}}</td>
-            </tr>
-            <tr>
-                <td>Vitamina B</td>
-                <td>{{alimento_t.Vitamina_b_valorTotal}}</td>
-            </tr>
-            <tr>
-                <td>Vitamina C</td>
-                <td>{{alimento_t.Vitamina_c_valorTotal}}</td>
-            </tr>
-            <tr>
-                <td>Vitamina D</td>
-                <td>{{alimento_t.Vitamina_d_valorTotal}}</td>
-            </tr>
-            <tr>
-                <td>Vitamina E</td>
-                <td>{{alimento_t.Vitamina_e_valorTotal}}</td>
-            </tr>          
-        </table>
-
-       <h3>-----------------------------------------------------------------------</h3>
-
-        <h3> Relatório Mensal - valores consumidos até o presente momento</h3>
-        <table class="table">
-            <tr>
-                <th>Nome </th>
-                <th>Valor</th>
-            </tr>
-            <tr>
-                <td>Valor Calorico</td>
-                <td>{{alimento_t.ValorCaloricoTotal}}</td>
-            </tr>
-            <tr>
-                <td>CHO</td>
-                <td>{{alimento_t.Cho_valorTotal}}</td>
-            </tr>
-            <tr>
-                <td>Proteinas</td>
-                <td>{{alimento_t.Proteinas_valorTotal}}</td>
-            </tr>
-            <tr>
-                <td>Gprduras Totais</td>
-                <td>{{alimento_t.Gorduras_totais_valorTotal}}</td>
-            </tr>
-            <tr>
-                <td>Gorduras Saturadas</td>
-                <td>{{alimento_t.Gorduras_saturadas_valorTotal}}</td>
-            </tr>
-            <tr>
-                <td>Colesterol</td>
-                <td>{{alimento_t.Colesterol_valorTotal}}</td>
-            </tr>
-            <tr>
-                <td>Fósforo</td>
-                <td>{{alimento_t.Fosforo_valorTotal}}</td>
-            </tr>
-            <tr>
-                <td>Poliinsaturados</td>
-                <td>{{alimento_t.Poliinsaturados_valorTotal}}</td>
-            </tr>
-            <tr>
-                <td>Monoinsaturados</td>
-                <td>{{alimento_t.Monoinsaturados_valorTotal}}</td>
-            </tr>
-            <tr>
-                <td>Vitamina B1</td>
-                <td>{{alimento_t.Vitamina_b1_valorTotal}}</td>
-            </tr>
-            <tr>
-                <td>Vitamina B2</td>
-                <td>{{alimento_t.Vitamina_b2_valorTotal}}</td>
-            </tr>
-            <tr>
-                <td>Vitamina B3</td>
-                <td>{{alimento_t.Vitamina_b3_valorTotal}}</td>
-            </tr>
-            <tr>
-                <td>Vitamina B6</td>
-                <td>{{alimento_t.Vitamina_b6_valorTotal}}</td>
-            </tr>
-            <tr>
-                <td>Vitamina B9</td>
-                <td>{{alimento_t.Vitamina_b9_valorTotal}}</td>
-            </tr>
-            <tr>
-                <td>Vitamina B12</td>
-                <td>{{alimento_t.Vitamina_b12_valorTotal}}</td>
-            </tr>
-            <tr>
-                <td>Gorduras Trans</td>
-                <td>{{alimento_t.Gordura_trans_valorTotal}}</td>
-            </tr>
-            <tr>
-                <td>Fibra Alimentar</td>
-                <td>{{alimento_t.Fibra_alimentar_valorTotal}}</td>
-            </tr>
-            <tr>
-                <td>Acucar</td>
-                <td>{{alimento_t.Acucar_valorTotal}}</td>
-            </tr>
-            <tr>
-                <td>Sodio</td>
-                <td>{{alimento_t.Sodio_valorTotal}}</td>
-            </tr>
-            <tr>
-                <td>Selenio</td>
-                <td>{{alimento_t.Selenio_valorTotal}}</td>
-            </tr>
-            <tr>
-                <td>Calcio</td>
-                <td>{{alimento_t.Calcio_valorTotal}}</td>
-            </tr>
-            <tr>
-                <td>Ferro</td>
-                <td>{{alimento_t.Ferro_valorTotal}}</td>
-            </tr>
-            <tr>
-                <td>Potassio</td>
-                <td>{{alimento_t.Proteinas_valorTotal}}</td>
-            </tr>
-            <tr>
-                <td>Zinco</td>
-                <td>{{alimento_t.Zinco_valorTotal}}</td>
-            </tr>
-            <tr>
-                <td>Magnésio</td>
-                <td>{{alimento_t.Magnesio_valorTotal}}</td>
-            </tr>
-            <tr>
-                <td>Vitamina A</td>
-                <td>{{alimento_t.Vitamina_a_valorTotal}}</td>
-            </tr>
-            <tr>
-                <td>Vitamina B</td>
-                <td>{{alimento_t.Vitamina_b_valorTotal}}</td>
-            </tr>
-            <tr>
-                <td>Vitamina C</td>
-                <td>{{alimento_t.Vitamina_c_valorTotal}}</td>
-            </tr>
-            <tr>
-                <td>Vitamina D</td>
-                <td>{{alimento_t.Vitamina_d_valorTotal}}</td>
-            </tr>
-            <tr>
-                <td>Vitamina E</td>
-                <td>{{alimento_t.Vitamina_e_valorTotal}}</td>
-            </tr>   
-        </table>
-
-        <h3>---------------------------------------------------------------------------</h3>
- 
+                </tr>
+            </table>
+        </div>
     </form>
-
-
 </div>
