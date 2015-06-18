@@ -3,23 +3,28 @@
         <div class="row" id="divAlimentos">
             <div class="col s6">
                 <input ng-model="refeicao.Descricao" id="Descricao" type="text" placeholder="Descrição" maxlength="50" />
-                <label class="required">Descrição</label>
+                <label class="required" for="Descricao">Descrição</label>
 
             </div>
 
-            <label class="required">Alimento</label>
 
 
-            <select class="ac-select stateList" ac-model="stateSelected" ac-options="s.Nome for s in getAllStates()" ac-settings="{ loadOnCreate: false, loadOnOpen: true, minWidth: '300px' }" ac-change="stateSelected(value)"></select>
-            <label class="col s6 control-label">Quantidade</label>
-
-            <input id="cho" ng-model="quantidade" placeholder="Gramas ou Ml" type="number" max="10000" min="1" />
-            <button class="btn" ng-click="addItem()">Adicionar</button>
-
-
-
-
+            <select id="select" class=" ac-select stateList" ac-model="stateSelected" ac-options="s.Nome for s in getAllStates()" ac-settings="{ loadOnCreate: false, loadOnOpen: true, minWidth: '300px' }" ac-change="stateSelected(value)" material-select></select>
+            <label class="col s6 control-label" for="select">Alimento</label>
         </div>
+            <div class="row">
+                <div class="col s4" input-field>
+                    <input id="qtd" ng-model="quantidade" placeholder="Gramas ou Ml" type="number" max="10000" min="1" />
+                    <label class="col s6 control-label" for="qtd">Quantidade</label>
+                </div>
+                <div class="input-field col s4">
+                    <button class="waves-effect waves-light btn" ng-click="addItem()">Adicionar</button>
+                </div>
+            </div>
+
+
+
+ 
 
         <div class="center">
             <button type="button" class="btn " ng-click="saveRefeicao();">Salvar</button>
