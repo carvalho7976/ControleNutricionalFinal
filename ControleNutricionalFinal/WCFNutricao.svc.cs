@@ -218,46 +218,46 @@ namespace ControleNutricionalFinal
         {
             using (NutricaoContext mde = new NutricaoContext())
             {
-                
+                DateTime data = new DateTime(2015, 06, 17);
                 var queryAlimentoRefeicao = mde.AlimentoRefeicao.Select(column =>
                     new
                     {
                         Alimento = column.Alimento,
                         Refeicao = column.Refeicao,
                         Quantidade = column.Quantidade,
-                        ValorCaloricoTotal = ((column.Quantidade * column.Alimento.Valor_calorico) / 100),
-                        Cho_valorTotal = (column.Quantidade * column.Alimento.Cho)/100,
-                        Proteinas_valorTotal = (column.Quantidade * column.Alimento.Proteinas) / 100,
-                        Gorduras_totais_valorTotal = (column.Quantidade * column.Alimento.Gorduras_totais) / 100,
-                        Gorduras_saturadas_valorTotal = (column.Quantidade * column.Alimento.Gorduras_saturadas) / 100,
-                        Colesterol_valorTotal  = (column.Quantidade * column.Alimento.Colesterol) / 100,
-                        Fosforo_valorTotal  = (column.Quantidade * column.Alimento.Fosforo) / 100,
-                        Poliinsaturados_valorTotal  = (column.Quantidade * column.Alimento.Poliinsaturados) / 100,
-                        Monoinsaturados_valorTotal  = (column.Quantidade * column.Alimento.Monoinsaturados) / 100,
-                        Vitamina_b1_valorTotal  = (column.Quantidade * column.Alimento.Vitamina_b1) / 100,
-                        Vitamina_b2_valorTotal  = (column.Quantidade * column.Alimento.Vitamina_b2) / 100,
-                        Vitamina_b3_valorTotal  = (column.Quantidade * column.Alimento.Vitamina_b3) / 100,
-                        Vitamina_b6_valorTotal  = (column.Quantidade * column.Alimento.Vitamina_b6) / 100,
-                        Gordura_trans_valorTotal  = (column.Quantidade * column.Alimento.Gordura_trans) / 100,
-                        Fibra_alimentar_valorTotal  = (column.Quantidade * column.Alimento.Fibra_alimentar) / 100,
-                        Acucar_valorTotal  = (column.Quantidade * column.Alimento.Acucar) / 100,
-                        Sodio_valorTotal  = (column.Quantidade * column.Alimento.Sodio) / 100,
-                        Selenio_valorTotal  = (column.Quantidade * column.Alimento.Selenio) / 100,
-                        Calcio_valorTotal  = (column.Quantidade * column.Alimento.Calcio) / 100,
-                        Ferro_valorTotal  = (column.Quantidade * column.Alimento.Ferro) / 100,
-                        Potassio_valorTotal  = (column.Quantidade * column.Alimento.Potassio) / 100,
-                        Zinco_valorTotal  = (column.Quantidade * column.Alimento.Zinco) / 100,
-                        Magnesio_valorTotal  = (column.Quantidade * column.Alimento.Magnesio) / 100,
-                        Vitamina_a_valorTotal  = (column.Quantidade * column.Alimento.Vitamina_a) / 100,
-                        Vitamina_b_valorTotal  = (column.Quantidade * column.Alimento.Vitamina_b) / 100,
-                        Vitamina_c_valorTotal  = (column.Quantidade * column.Alimento.Vitamina_c) / 100,
-                        Vitamina_d_valorTotal  = (column.Quantidade * column.Alimento.Vitamina_d) / 100,
-                        Vitamina_e_valorTotal  = (column.Quantidade * column.Alimento.Vitamina_e) / 100,
-                        Vitamina_b9_valorTotal  = (column.Quantidade * column.Alimento.Vitamina_b9) / 100,
-                        Vitamina_b12_valorTotal  = (column.Quantidade * column.Alimento.Vitamina_b12) / 100
+                        ValorCaloricoTotal = ((column.Quantidade * column.Alimento.Valor_calorico) / column.Alimento.Porcao),
+                        Cho_valorTotal = (column.Quantidade * column.Alimento.Cho) / column.Alimento.Porcao,
+                        Proteinas_valorTotal = (column.Quantidade * column.Alimento.Proteinas) / column.Alimento.Porcao,
+                        Gorduras_totais_valorTotal = (column.Quantidade * column.Alimento.Gorduras_totais) / column.Alimento.Porcao,
+                        Gorduras_saturadas_valorTotal = (column.Quantidade * column.Alimento.Gorduras_saturadas) / column.Alimento.Porcao,
+                        Colesterol_valorTotal = (column.Quantidade * column.Alimento.Colesterol) / column.Alimento.Porcao,
+                        Fosforo_valorTotal = (column.Quantidade * column.Alimento.Fosforo) / column.Alimento.Porcao,
+                        Poliinsaturados_valorTotal = (column.Quantidade * column.Alimento.Poliinsaturados) / column.Alimento.Porcao,
+                        Monoinsaturados_valorTotal = (column.Quantidade * column.Alimento.Monoinsaturados) / column.Alimento.Porcao,
+                        Vitamina_b1_valorTotal = (column.Quantidade * column.Alimento.Vitamina_b1) / column.Alimento.Porcao,
+                        Vitamina_b2_valorTotal = (column.Quantidade * column.Alimento.Vitamina_b2) / column.Alimento.Porcao,
+                        Vitamina_b3_valorTotal = (column.Quantidade * column.Alimento.Vitamina_b3) / column.Alimento.Porcao,
+                        Vitamina_b6_valorTotal = (column.Quantidade * column.Alimento.Vitamina_b6) / column.Alimento.Porcao,
+                        Gordura_trans_valorTotal = (column.Quantidade * column.Alimento.Gordura_trans) / column.Alimento.Porcao,
+                        Fibra_alimentar_valorTotal = (column.Quantidade * column.Alimento.Fibra_alimentar) / column.Alimento.Porcao,
+                        Acucar_valorTotal = (column.Quantidade * column.Alimento.Acucar) / column.Alimento.Porcao,
+                        Sodio_valorTotal = (column.Quantidade * column.Alimento.Sodio) / column.Alimento.Porcao,
+                        Selenio_valorTotal = (column.Quantidade * column.Alimento.Selenio) / column.Alimento.Porcao,
+                        Calcio_valorTotal = (column.Quantidade * column.Alimento.Calcio) / column.Alimento.Porcao,
+                        Ferro_valorTotal = (column.Quantidade * column.Alimento.Ferro) / column.Alimento.Porcao,
+                        Potassio_valorTotal = (column.Quantidade * column.Alimento.Potassio) / column.Alimento.Porcao,
+                        Zinco_valorTotal = (column.Quantidade * column.Alimento.Zinco) / column.Alimento.Porcao,
+                        Magnesio_valorTotal = (column.Quantidade * column.Alimento.Magnesio) / column.Alimento.Porcao,
+                        Vitamina_a_valorTotal = (column.Quantidade * column.Alimento.Vitamina_a) / column.Alimento.Porcao,
+                        Vitamina_b_valorTotal = (column.Quantidade * column.Alimento.Vitamina_b) / column.Alimento.Porcao,
+                        Vitamina_c_valorTotal = (column.Quantidade * column.Alimento.Vitamina_c) / column.Alimento.Porcao,
+                        Vitamina_d_valorTotal = (column.Quantidade * column.Alimento.Vitamina_d) / column.Alimento.Porcao,
+                        Vitamina_e_valorTotal = (column.Quantidade * column.Alimento.Vitamina_e) / column.Alimento.Porcao,
+                        Vitamina_b9_valorTotal = (column.Quantidade * column.Alimento.Vitamina_b9) / column.Alimento.Porcao,
+                        Vitamina_b12_valorTotal = (column.Quantidade * column.Alimento.Vitamina_b12) / column.Alimento.Porcao
                     }).ToList();
 
-                return queryAlimentoRefeicao.Where(r => r.Refeicao.dataDeCriacao == DateTime.Today).Select(column =>
+                return queryAlimentoRefeicao.Where(r => r.Refeicao.dataDeCriacao == data).Select(column =>
                     new AlimentoRefeicao
                     {
                         Alimento = column.Alimento,
