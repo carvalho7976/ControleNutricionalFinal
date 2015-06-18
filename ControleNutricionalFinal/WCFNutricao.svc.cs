@@ -185,7 +185,7 @@ namespace ControleNutricionalFinal
             };
         }
 
-        //ListaDeAlimentoPorRefeicao
+        //ListaDeAlimentoPorRefeicao pela data
         public List<AlimentoRefeicao> listaAlimentosPorRefeicao(string dia, string mes, string ano)
         {
             using (NutricaoContext mde = new NutricaoContext())
