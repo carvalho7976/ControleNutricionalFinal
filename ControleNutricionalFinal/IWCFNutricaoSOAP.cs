@@ -55,6 +55,9 @@ namespace ControleNutricionalFinal
         List<AlimentoRefeicao> findAllAlimentoRefeicao();
 
         [OperationContract]
+        List<AlimentoRefeicao> relatorioValorNutricionalTotalDiario();
+
+        [OperationContract]
         List<AlimentoRefeicao> listaAlimentosPorRefeicao(string dia, string mes, string ano);
 
         [OperationContract]

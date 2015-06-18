@@ -71,6 +71,11 @@ namespace ControleNutricionalFinal
         List<AlimentoRefeicao> listaAlimentosPorRefeicao(string dia, string mes,string ano);
 
         [OperationContract]
+        [WebInvoke(Method = "GET", UriTemplate = "relatorioValorNutricionalTotalDiario", ResponseFormat = WebMessageFormat.Json)]
+        List<AlimentoRefeicao> relatorioValorNutricionalTotalDiario();
+
+
+        [OperationContract]
         [WebInvoke(Method = "GET", UriTemplate = "findAlimentoRefeicao/{id}", ResponseFormat = WebMessageFormat.Json)]
         AlimentoRefeicao findAlimentoRefeicao(string id);
 
