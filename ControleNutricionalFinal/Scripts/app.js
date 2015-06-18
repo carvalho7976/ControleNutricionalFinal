@@ -6,6 +6,8 @@ var ControleNutricional = angular.module("ControleNutricional", ['ngRoute', 'ngR
             when('/', { controller: IndexControl, templateUrl: '/pages/home.html' }).
             when('/cadastrar', { controller: CadastroAlimentoControl, templateUrl: '/pages/cadastrarAlimento.html' }).
             when('/cadastrarRefeicao', { controller: CadastroRefeicaoControl, templateUrl: '/pages/cadastrarRefeicao.html' }).
+            when('/relatorio', { controller: RelatorioControl, templateUrl: '/pages/relatorio.html' }).
+
 
             otherwise({ redirectTo: '/' });
     });
@@ -74,14 +76,6 @@ var CadastroRefeicaoControl = function ($scope, $location, $routeParams, $http) 
             $scope.allStates = data;
             $scope.stateSelected = $scope.allStates[0].Nome;
         });
-        //ControleNutricional.query({},
-        //    function (data) {
-        //        console.log("adicionar estados");
-        //        $scope.allStates = data;
-        //        console.log($scope.allStates);
-        //        console.log("--------------")
-        //        //$scope.stateSelected = $scope.allStates[0].Nome;
-        //    });
     };
        
    $scope.addItem = function () {
@@ -129,4 +123,40 @@ var CadastroRefeicaoControl = function ($scope, $location, $routeParams, $http) 
     $scope.search();
        
    
+};
+var RelatorioControl = function ($scope, $location, $routeParams, $http) {
+ var dataCriacao = {"dia": 18, "mes": 06, "ano": 2015};
+    var refeicoes = [];
+
+  
+            $http.get(url + "listaAlimentosPorRefeicao" +"/" + dataCriacao.dia +"/" + dataCriacao.mes +"/" + dataCriacao.ano).success(function (data) {
+               
+                var temp_ref = [];
+                var temp_al = [];
+                var copy = data;
+                var alimento_refeicoes = [[]];
+                for (i = 0; i < data.length; i++) {
+                        var existe = false;
+                    for (j = 0; j < temp_ref.length ; j++){
+                        if (data[i].Refeicao.Id == temp_ref[j].Id) {
+                            existe = true;
+                        }
+                    }
+                    if (!existe) {
+                        temp_ref.push(data[i].Refeicao)
+                    }
+                }
+                console.log(temp_ref);
+
+                $scope.refeicoes = temp_ref;
+                $scope.alimentos = data;
+                console.log(data);  
+                //$scope.refeicoes = temp_ref;
+                //$scope.alimentos = temp_al;
+                //$scope.alimentos = data.Alimento;
+                                
+            //
+        });
+    
+
 };

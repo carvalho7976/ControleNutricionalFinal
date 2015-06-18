@@ -339,6 +339,8 @@ namespace ControleNutricionalFinal
             {
                 try
                 {
+                    mde.Refeicao.Attach(alimentoRefeicao.Refeicao);
+                    mde.Alimentos.Attach(alimentoRefeicao.Alimento);
                     mde.AlimentoRefeicao.Add(alimentoRefeicao);
                     mde.SaveChanges();
                     return true;
