@@ -78,6 +78,7 @@
     <Content Include="Content\materialize.css" />
     <Content Include="Content\materialize.min.css" />
     <Content Include="Content\style.css" />
+    <Content Include="font\flat\flaticon.svg" />
     <Content Include="publico\css\materialize.css" />
     <Content Include="publico\css\materialize.min.css" />
     <Content Include="publico\css\style.css" />
@@ -85,6 +86,7 @@
     <Content Include="font\material-design-icons\LICENSE.txt" />
     <Content Include="font\material-design-icons\Material-Design-Icons.svg" />
     <Content Include="Icon.png" />
+    <Content Include="publico\images\lunch4.png" />
     <Content Include="publico\index.html" />
     <Content Include="publico\js\materialize.js" />
     <Content Include="publico\js\materialize.min.js" />
@@ -95,6 +97,7 @@
     <Content Include="pages\home.html" />
     <Content Include="pages\index.html" />
     <Content Include="pages\relatorio.html" />
+    <Content Include="publico\js\materialSelect.js" />
     <Content Include="Scripts\acute.select.js" />
     <Content Include="Scripts\angular-animate.js" />
     <Content Include="Scripts\angular-animate.min.js" />
@@ -893,6 +896,9 @@
     <Content Include="font\roboto\Roboto-Thin.ttf" />
     <Content Include="font\roboto\Roboto-Thin.woff" />
     <Content Include="font\roboto\Roboto-Thin.woff2" />
+    <Content Include="font\flat\flaticon.eot" />
+    <Content Include="font\flat\flaticon.ttf" />
+    <Content Include="font\flat\flaticon.woff" />
     <None Include="Scripts\jquery-1.9.1.intellisense.js" />
     <Content Include="Scripts\jquery-1.9.1.js" />
     <Content Include="Scripts\jquery-1.9.1.min.js" />

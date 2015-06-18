@@ -1,28 +1,32 @@
 ﻿<!DOCTYPE html>
 <html ng-app="ControleNutricional" xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <script src="/Scripts/jquery-1.9.0.js"></script>
-    <script src="/Scripts/bootstrap.js"></script>
     <script src="/Scripts/angular.js"></script>
     <script src="/Scripts/angular-resource.js"></script>
     <script src="/Scripts/angular-route.js"></script>
     <script src="/Scripts/acute.select.js"></script>
     <script src="/Scripts/app.js"> </script>
-    <link rel="stylesheet" type="text/css" href="/Content/bootstrap.css" />
-    <link rel="stylesheet" type="text/css" href="/Content/acute.select.css" />
-     <title>Controle Nutricional</title>
+    <!--<script src="../publico/js/materialSelect.js"> </script>-->
+    <link href="/Content/acute.select.css" type="text/css" rel="stylesheet"  />
+    <link href="../publico/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection" />
+    <link href="../publico/css/style.css" type="text/css" rel="stylesheet" media="screen,projection" />
+    
+    <title>Controle Nutricional</title>
+    <script type="text/javascript">
+    $(document).ready(function () {
+        $(element).material_select();
+    });
+    </script>
 </head>
 <body>
-    <nav class="navbar navbar-default">
-        <div class="container">
-            <div class="navbar-header">
-                <a class="navbar-brand" href="/pages/#/">Icon</a>
-            </div>
-            <ul class="nav navbar-nav navbar-right">
-                <li><a href="#/cadastrar"><i class="fa fa-home"></i> Cadastrar Alimentos</a></li>
-                <li><a href="#/cadastrarRefeicao"><i class="fa fa-shield"></i> Refeições</a></li>
-                <li><a href="#/relatorio"><i class="fa fa-comment"></i> Relatorios</a></li>
-                <li><a href="../logout.aspx"fa fa-comment"></i> LogOut</a></li>
+    <nav class="teal darken-1" role="navigation">
+        <div class="nav-wrapper container">
+            <a class="brand-logo left" href="/pages/#/">Icon</a>
+            <ul class="right hide-on-med-and-down">
+                <li><a href="#/cadastrar">Cadastrar Alimentos</a></li>
+                <li><a href="#/cadastrarRefeicao">Refeições</a></li>
+                <li><a href="#/relatorio"> Relatorios</a></li>
+                <li><a href="../publico/logout.aspx"> LogOut</a></li>
             </ul>
         </div>
     </nav>
@@ -30,5 +34,10 @@
     <div class="container">
         <div ng-view></div>
     </div>
+    <!--  Scripts-->
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="js/materialize.js"></script>
+    <script src="js/init.js"></script>
+
 </body>
 </html>

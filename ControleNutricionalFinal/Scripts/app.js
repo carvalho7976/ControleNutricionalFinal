@@ -38,10 +38,12 @@ var IndexControl = function ($scope, $location, $routeParams, $http) {
 var CadastroAlimentoControl = function ($scope, $location, $routeParams, $http) {
    
     $scope.grupoArray = [];
+    var grupo = [];
     var lista;
     $scope.search = function () {
         $http.get(url + "findAllGrupo").success(function (data) {
             $scope.grupoArray = data;
+            grupo = data;
             $scope.grupo = $scope.grupoArray[0];
         });
         //Grupo.query({},
@@ -53,9 +55,16 @@ var CadastroAlimentoControl = function ($scope, $location, $routeParams, $http) 
     $scope.search();
     
     $scope.save = function () {
-        $scope.alimento.Grupo = $scope.grupo.Id;
-
+        for (i = 0; i < grupo.length; i++) {
+            if (grupo[i].Id == $scope.grupo) {
+                $scope.alimento.grupo = grupo[i];
+                console.log(grupo);
+                console.log("---------------");
+            }
+        }
+        
         console.log($scope.alimento);
+        console.log("---------------");
         $http.post(url + "createAlimento", $scope.alimento).success(function () {
             $location.path('/');
         });

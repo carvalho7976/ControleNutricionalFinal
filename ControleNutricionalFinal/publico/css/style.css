@@ -7,5 +7,42 @@
  */
 
 .icon-block {
-  padding: 0 15px;
+    padding: 0 15px;
+}
+
+@font-face {
+    font-family: "Flaticon";
+    src: url("../font/flat/flaticon.eot");
+    src: url("../font/flat/flaticon.eot#iefix") format("embedded-opentype"), url("../font/flat/flaticon.woff") format("woff"), url("../font/flat/flaticon.ttf") format("truetype"), url("../font/flat/flaticon.svg") format("svg");
+    font-weight: normal;
+    font-style: normal;
+}
+
+[class^="flaticon-"]:before, [class*=" flaticon-"]:before,
+[class^="flaticon-"]:after, [class*=" flaticon-"]:after {
+    font-family: Flaticon;
+    font-size: 20px;
+    font-style: normal;
+    margin-left: 20px;
+}
+
+.flaticon-lunch4:before {
+    content: "\e000";
+}
+
+.glyph {
+    display: inline-block;
+    width: 120px;
+    margin: 10px;
+    text-align: center;
+    vertical-align: top;
+    background: #FFF;
+}
+
+glyph-icon .glyph .glyph-icon {
+    padding: 10px;
+    display: block;
+    font-family: "Flaticon";
+    font-size: 64px;
+    line-height: 1;
 }
