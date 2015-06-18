@@ -53,7 +53,7 @@ var CadastroAlimentoControl = function ($scope, $location, $routeParams, $http) 
     $scope.save = function () {
         for (i = 0; i < grupo.length; i++) {
             if (grupo[i].Id == $scope.grupo) {
-                $scope.alimento.grupo = grupo[i];
+                $scope.alimento.Grupo = grupo[i].Id;
                 console.log(grupo);
                 console.log("---------------");
             }
